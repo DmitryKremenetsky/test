@@ -6,26 +6,21 @@ const includeFile = require("gulp-file-include");
 const browsersync = require("browser-sync").create();
 
 const HTML_PATH = ["./*.html", "!dist/index.html"];
-const SCSS_PATH = "./styles/*.scss";
-const IMAGES_PATH = "./images/**/*.{gif,jpg,png,svg}";
+const SCSS_PATH = "src/styles/*.scss";
 
 function htmlTask() {
-	return src("src/index.html")
+	return src("index.html")
 		.pipe(includeFile({ prefix: "@" }))
 		.pipe(dest("dist"));
 }
 
 function scssTask() {
-	return src("src/styles/index.scss")
+	return src(SCSS_PATH)
 		.pipe(sourcemaps.init())
 		.pipe(concat("styles.css"))
 		.pipe(sass())
 		.pipe(sourcemaps.write())
 		.pipe(dest("dist"));
-}
-
-function imagesTask() {
-	return src(IMAGES_PATH).pipe(dest("dist/images"));
 }
 
 function serveTask(cb) {
@@ -45,10 +40,6 @@ function reloadTask(cb) {
 function watchTask() {
 	watch(HTML_PATH, series(htmlTask, reloadTask));
 	watch(SCSS_PATH, series(scssTask, reloadTask));
-	watch(IMAGES_PATH, series(imagesTask, reloadTask));
 }
 
-task(
-	"default",
-	series(parallel(scssTask, imagesTask, htmlTask), serveTask, watchTask)
-);
+task("default", series(parallel(scssTask, htmlTask), serveTask, watchTask));

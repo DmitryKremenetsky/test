@@ -9,11 +9,10 @@
 	"author": "Dmitry Kremenetsky",
 	"license": "MIT",
 	"devDependencies": {
-		"browser-sync": "^2.26.14",
+		"browser-sync": "^2.29.3",
 		"gulp": "^4.0.2",
 		"gulp-concat": "^2.6.1",
 		"gulp-file-include": "^2.3.0",
-		"gulp-gh-pages": "^0.5.4",
 		"gulp-sass": "^5.1.0",
 		"gulp-sourcemaps": "^3.0.0",
 		"sass": "^1.63.6"
