@@ -1,3 +1,163 @@
-.hello {
-	color: red;
+$main-font: 'Work Sans', sans-serif;
+$primary-color: #111111;
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.wrapper {
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
+}
+
+.container {
+	display: flex;
+}
+
+.left-side-content {
+	width: 137px;
+	background-color: #5A61ED;
+	writing-mode: vertical-lr;
+	transform: rotate(-180deg);
+}
+
+.rotate-text {
+	margin: 23px;
+	color: #FFFFFF;
+}
+
+.main-content {
+	
+}
+
+.registration-form {
+	margin: 39px 22px 33px;
+}
+
+.user-message {
+	margin-bottom: 20px;
+}
+
+.new-user {
+	font-family: $main-font;
+	color: $primary-color;
+}
+
+.new-user_description {
+	font-family: $main-font;
+	color: $primary-color;
+}
+
+.user-name {
+	display: flex;
+	margin-bottom: 16px;
+}
+
+.first-name {
+	display: flex;
+	flex-direction: column;
+	margin-right: 13px;
+}
+
+.last-name {
+	display: flex;
+	flex-direction: column;
+}
+
+.user-name_input {
+	width: 235px;
+}
+
+.user-details {
+	display: flex;
+	margin-bottom: 16px;
+}
+
+.change-nationality {
+	display: flex;
+	flex-direction: column;
+	margin-right: 13px;
+}
+
+.nationality {
+	width: 235px;
+}
+
+.change-email {
+	display: flex;
+	flex-direction: column;
+}
+
+.email {
+	width: 235px;
+}
+
+.personal-data {
+	display: flex;
+	margin-bottom: 16px;
+}
+
+.user-dob {
+	display: flex;
+	flex-direction: column;
+	margin-right: 16px;
+}
+
+.dob {
+	width: 235px;
+}
+
+.user-gender {
+	display: flex;
+	flex-direction: column;
+}
+
+.gender {
+	width: 235px;
+}
+
+.user-password {
+	display: flex;
+	margin-bottom: 104px;
+}
+
+.password {
+	display: flex;
+	flex-direction: column;
+	margin-right: 13px;
+}
+
+.confirm-password {
+	display: flex;
+	flex-direction: column;
+}
+
+.input-password {
+	width: 235px;
+}
+
+.signup-login-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.login-link {
+	text-decoration: none;
+}
+
+.complete-signup-button {
+	padding: 7px 25px 7px;
+	background-color: #5A61ED;
+	color: #FFFFFF;
 }
