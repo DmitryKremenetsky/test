@@ -10,24 +10,24 @@
 		<div class="wrapper">
 			<div class="container">
 				<div class="left-side-content">
-					<p class="rotate-text">Sing UP</p>
+					<p class="rotate-text">Sign Up</p>
 				</div>
 				<div class="main-content">
 					<div class="registration-form">
 						<div class="user-message">
 							<h1 class="new-user">New User?</h1>
-							<p class="new-user_description">
+							<p class="new-user-description">
 								Use the form below to create your account.
 							</p>
 						</div>
 						<div class="user-name">
 							<div class="first-name">
-								<label for="">First Name</label>
-								<input class="user-name_input" type="text">
+								<label for="first-name">First Name</label>
+								<input class="user-name-input" type="text" id="first-name" />
 							</div>
 							<div class="last-name">
-								<label for="">Last Name</label>
-								<input class="user-name_input" type="text">
+								<label for="last-name">Last Name</label>
+								<input class="user-name-input" type="text" id="last-name" />
 							</div>
 						</div>
 						<div class="user-details">
@@ -37,42 +37,66 @@
 									<option value="ru">Russia</option>
 									<option value="us">USA</option>
 									<option value="gb">UK</option>
-									<option value="gb">Belarus</option>
+									<option value="by">Belarus</option>
 								</select>
 							</div>
 							<div class="change-email">
-								<label for="">Email</label>
-								<input class="email" type="text">
+								<label for="email">Email</label>
+								<input class="email" type="text" id="email" />
 							</div>
 						</div>
 						<div class="personal-data">
-							<div class="user-dob">
+							<div class="form-field">
 								<label for="dob">Date of Birth</label>
-								<input class="dob" type="date" id="dob">
+								<div class="dob-select">
+									<select class="select-field" id="dob-day">
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+									<select class="select-field" id="dob-month">
+										<option value="1">January</option>
+										<option value="2">February</option>
+									</select>
+									<select class="select-field" id="dob-year">
+										<option value="2000">2000</option>
+										<option value="2001">2001</option>
+									</select>
+								</div>
 							</div>
-							<div class="user-gender">
-								<label for="gender">Gender</label>
-								<select class="gender" id="gender">
-									<option value="male">Мужской</option>
-									<option value="female">Женский</option>
-									<option value="other">Другой</option>
-								</select>
+							<div class="form-field">
+								<label for="Gender">Gender</label>
+								<div class="checkbox-group">
+									<label class="gender-checkbox">
+										<input type="checkbox" value="male" /> Male
+									</label>
+									<label class="gender-checkbox">
+										<input type="checkbox" value="female" /> Female
+									</label>
+								</div>
 							</div>
 						</div>
 						<div class="user-password">
 							<div class="password">
-								<label for="">Password</label>
-								<input class="input-password" type="password">
+								<label for="password">Password</label>
+								<input class="input-password" type="password" id="password" />
 							</div>
 							<div class="confirm-password">
-								<label for="">Confirm Password</label>
-								<input class="input-password" type="password">
+								<label for="confirm-password">Confirm Password</label>
+								<input
+									class="input-password"
+									type="password"
+									id="confirm-password"
+								/>
 							</div>
 						</div>
 						<div class="signup-login-container">
-							<p class="login-link-text">Have an account? <a class="login-link" href="login.html">Login</a></p>
+							<p class="login-link-text">
+								Have an account?
+								<a class="login-link" href="login.html">Login</a>
+							</p>
 							<button class="complete-signup-button">Complete Signup</button>
 						</div>
+					</div>
 				</div>
 			</div>
 		</div>

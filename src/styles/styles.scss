@@ -13,6 +13,14 @@ body {
 }
 
 
+label[for] {
+	font-family: $main-font;
+	font-size: 12px;
+	line-height: 14.06px;
+	color: #7C7C7C;
+}
+
+
 
 .wrapper {
 	width: 800px;
@@ -22,6 +30,7 @@ body {
 
 .container {
 	display: flex;
+	padding: 60px 68px;
 }
 
 .left-side-content {
@@ -32,12 +41,13 @@ body {
 }
 
 .rotate-text {
-	margin: 23px;
+	margin: 23px 7px 0;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-size: 49px;
+	line-height: 63.41px;
+	letter-spacing: 0.5px;
 	color: #FFFFFF;
-}
-
-.main-content {
-	
 }
 
 .registration-form {
@@ -50,23 +60,36 @@ body {
 
 .new-user {
 	font-family: $main-font;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 25.78px;
+	letter-spacing: -0.46px;
 	color: $primary-color;
 }
 
-.new-user_description {
+.new-user-description {
 	font-family: $main-font;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16.41px;
 	color: $primary-color;
 }
 
 .user-name {
 	display: flex;
+	justify-content: space-between;
 	margin-bottom: 16px;
 }
 
 .first-name {
 	display: flex;
 	flex-direction: column;
-	margin-right: 13px;
+}
+
+.user-name-input {
+	width: 234.5px;
+	padding: 7px 0;
+	border: none;
 }
 
 .last-name {
@@ -80,17 +103,19 @@ body {
 
 .user-details {
 	display: flex;
+	justify-content: space-between;
 	margin-bottom: 16px;
 }
 
 .change-nationality {
 	display: flex;
 	flex-direction: column;
-	margin-right: 13px;
 }
 
 .nationality {
-	width: 235px;
+	width: 234.5px;
+	padding: 7px 0;
+	border: none;
 }
 
 .change-email {
@@ -99,7 +124,9 @@ body {
 }
 
 .email {
-	width: 235px;
+	width: 234.5px;
+	padding: 7px 0;
+	border: none;
 }
 
 .personal-data {
@@ -107,23 +134,34 @@ body {
 	margin-bottom: 16px;
 }
 
-.user-dob {
-	display: flex;
-	flex-direction: column;
+.form-field {
 	margin-right: 16px;
 }
 
-.dob {
-	width: 235px;
+#dob-day {
+	margin-top: 7px;
+	padding-right: 20px;
+	border: 0;
 }
 
-.user-gender {
-	display: flex;
-	flex-direction: column;
+#dob-month {
+	margin-top: 7px;
+	padding-right: 30px;
+	border: 0;
 }
 
-.gender {
-	width: 235px;
+#dob-year {
+	margin-top: 7px;
+	padding-right: 20px;
+	border: 0;
+}
+
+.checkbox-group {
+	margin-right: 16px;
+}
+
+.gender-checkbox {
+	margin-right: 20px;
 }
 
 .user-password {
@@ -144,6 +182,8 @@ body {
 
 .input-password {
 	width: 235px;
+	padding: 7px 0;
+	border: none;
 }
 
 .signup-login-container {
