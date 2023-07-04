@@ -4,9 +4,11 @@ const concat = require("gulp-concat");
 const sourcemaps = require("gulp-sourcemaps");
 const includeFile = require("gulp-file-include");
 const browsersync = require("browser-sync").create();
+const uglify = require("gulp-uglify");
 
 const HTML_PATH = ["./*.html", "!dist/index.html"];
 const SCSS_PATH = "src/styles/*.scss";
+const JS_PATH = "src/js/*.js";
 
 function htmlTask() {
 	return src("index.html")
@@ -23,10 +25,21 @@ function scssTask() {
 		.pipe(dest("dist"));
 }
 
+function jsTask() {
+	return src(JS_PATH)
+		.pipe(concat("bundle.js"))
+		.pipe(uglify())
+		.pipe(dest("dist/js"));
+}
+
 function serveTask(cb) {
 	browsersync.init({
 		server: {
 			baseDir: "dist",
+		},
+
+		mimeTypes: {
+			js: "application/javascript",
 		},
 	});
 	cb();
@@ -40,6 +53,10 @@ function reloadTask(cb) {
 function watchTask() {
 	watch(HTML_PATH, series(htmlTask, reloadTask));
 	watch(SCSS_PATH, series(scssTask, reloadTask));
+	watch(JS_PATH, series(jsTask, reloadTask));
 }
 
-task("default", series(parallel(scssTask, htmlTask), serveTask, watchTask));
+task(
+	"default",
+	series(parallel(scssTask, jsTask, htmlTask), serveTask, watchTask)
+);
