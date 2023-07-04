@@ -50,6 +50,10 @@ label[for] {
 	color: #FFFFFF;
 }
 
+.registration-success {
+	display: none;
+}
+
 .registration-form {
 	margin: 39px 22px 33px;
 }
@@ -87,7 +91,7 @@ label[for] {
 }
 
 .user-name-input {
-	width: 234.5px;
+	width: 235px;
 	padding: 7px 0;
 	border: none;
 }
@@ -95,10 +99,6 @@ label[for] {
 .last-name {
 	display: flex;
 	flex-direction: column;
-}
-
-.user-name_input {
-	width: 235px;
 }
 
 .user-details {
@@ -200,4 +200,20 @@ label[for] {
 	padding: 7px 25px 7px;
 	background-color: #5A61ED;
 	color: #FFFFFF;
+}
+
+.error {
+  border-bottom: 2px solid red;
+  position: relative;
+  height: 14.5px; 
+}
+
+.error::before {
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
 }
