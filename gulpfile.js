@@ -5,10 +5,17 @@ const sourcemaps = require("gulp-sourcemaps");
 const includeFile = require("gulp-file-include");
 const browsersync = require("browser-sync").create();
 const uglify = require("gulp-uglify");
+const clean = require("gulp-clean");
+const cleanCSS = require("gulp-clean-css");
+const autoprefixer = require("gulp-autoprefixer");
 
 const HTML_PATH = ["./*.html", "!dist/index.html"];
 const SCSS_PATH = "src/styles/*.scss";
 const JS_PATH = "src/js/*.js";
+
+function cleanTask() {
+	return src("dist", { allowEmpty: true, read: false }).pipe(clean());
+}
 
 function htmlTask() {
 	return src("index.html")
@@ -21,8 +28,13 @@ function scssTask() {
 		.pipe(sourcemaps.init())
 		.pipe(concat("styles.css"))
 		.pipe(sass())
+		.pipe(autoprefixer())
 		.pipe(sourcemaps.write())
 		.pipe(dest("dist"));
+}
+
+function minifyCssTask() {
+	return src("dist/styles.css").pipe(cleanCSS()).pipe(dest("dist"));
 }
 
 function jsTask() {
@@ -33,7 +45,7 @@ function jsTask() {
 }
 
 function buildTask(cb) {
-	return series(htmlTask, scssTask, jsTask)(cb);
+	return series(cleanTask, htmlTask, scssTask, minifyCssTask, jsTask)(cb);
 }
 
 function serveTask(cb) {
@@ -41,7 +53,6 @@ function serveTask(cb) {
 		server: {
 			baseDir: "dist",
 		},
-
 		mimeTypes: {
 			js: "application/javascript",
 		},
@@ -56,13 +67,10 @@ function reloadTask(cb) {
 
 function watchTask() {
 	watch(HTML_PATH, series(htmlTask, reloadTask));
-	watch(SCSS_PATH, series(scssTask, reloadTask));
+	watch(SCSS_PATH, series(scssTask, minifyCssTask, reloadTask));
 	watch(JS_PATH, series(jsTask, reloadTask));
 }
 
-task(
-	"default",
-	series(parallel(scssTask, jsTask, htmlTask), serveTask, watchTask)
-);
+task("default", series(buildTask, serveTask, watchTask));
 
 task("build", buildTask);
