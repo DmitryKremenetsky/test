@@ -1,5 +1,16 @@
+/* reused styles */
+
 $main-font: 'Work Sans', sans-serif;
 $primary-color: #111111;
+
+label[for] {
+  font-family: $main-font;
+  font-size: 12px;
+  line-height: 14.06px;
+  color: #7C7C7C;
+}
+
+/* main styles */
 
 html, body {
   height: 100%;
@@ -10,13 +21,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-label[for] {
-  font-family: $main-font;
-  font-size: 12px;
-  line-height: 14.06px;
-  color: #7C7C7C;
 }
 
 .wrapper {
@@ -33,6 +37,8 @@ label[for] {
   display: flex;
   padding: 60px 0;
 }
+
+/* styles for left content */
 
 .left-side-content {
   width: 137px;
@@ -51,6 +57,8 @@ label[for] {
   color: #FFFFFF;
 }
 
+/* styles for main content */
+
 .main-content {
 	flex: 1;
 }
@@ -60,6 +68,8 @@ label[for] {
 	width: 485px;
 	margin: 39px 21px 33px;
 }
+
+/* styles for new window */
 
 .registration-success-title {
 	margin: 178px 43px 0;
@@ -82,6 +92,8 @@ label[for] {
 .login-link-success {
 	margin: 152px 0 0;
 }
+
+/* form styles */
 
 .registration-form {
   margin: 39px 22px 33px;
@@ -167,6 +179,20 @@ label[for] {
   margin-right: 16px;
 }
 
+.gender-title {
+	font-family: "Work Sans", sans-serif;
+  font-size: 12px;
+  line-height: 14.06px;
+  color: #7C7C7C;
+}
+
+.dob-title {
+	font-family: "Work Sans", sans-serif;
+  font-size: 12px;
+  line-height: 14.06px;
+  color: #7C7C7C;
+}
+
 #dob-day,
 #dob-month,
 #dob-year {
@@ -202,6 +228,8 @@ label[for] {
   border: none;
 }
 
+/* lower main content styles */
+
 .signup-login-container {
   display: flex;
   justify-content: space-between;
@@ -212,6 +240,14 @@ label[for] {
 .login-link {
   text-decoration: none;
 	margin-left: 10px;
+}
+
+.login-link-text {
+	font-family: $main-font;
+	font-weight: 200;
+	font-size: 13px;
+	line-height: 15.25px;
+	color: #000000;
 }
 
 .complete-signup-button {
