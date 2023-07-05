@@ -32,6 +32,10 @@ function jsTask() {
 		.pipe(dest("dist/js"));
 }
 
+function buildTask(cb) {
+	return series(htmlTask, scssTask, jsTask)(cb);
+}
+
 function serveTask(cb) {
 	browsersync.init({
 		server: {
@@ -60,3 +64,5 @@ task(
 	"default",
 	series(parallel(scssTask, jsTask, htmlTask), serveTask, watchTask)
 );
+
+task("build", buildTask);
