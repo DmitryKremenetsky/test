@@ -57,6 +57,30 @@ label[for] {
 
 .registration-success {
   display: none;
+	width: 485px;
+	margin: 39px 21px 33px;
+}
+
+.registration-success-title {
+	margin: 178px 43px 0;
+	font-family: $main-font;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 26px;
+	letter-spacing: -0.46px;
+	color: $primary-color;
+}
+
+.registration-success-description {
+	margin: 16px 43px 0;
+	font-family: $main-font;
+	font-size: 14px;
+	line-height: 16.41px;
+	color: $primary-color;
+}
+
+.login-link-success {
+	margin: 152px 0 0;
 }
 
 .registration-form {
